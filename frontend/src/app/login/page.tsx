@@ -4,8 +4,21 @@ import Image from "next/image";
 const page = () => {
   return (
     <div className="grid grid-cols-2">
+      <div className="flex flex-col gap-5 justify-center items-start">
+
       <div>
-        <InputField label="email" placeholder="Enter your email" />
+          <h1 className="font-medium text-3xl">Welcome Back!</h1>
+          <p className="text-[#8C8C8C]">Sign in to access your dashboard and continue optimizing your learning process.
+          </p>
+      </div>
+
+
+       <div className="w-full flex flex-col gap-4">
+          <InputField label="Email" placeholder="Enter your email" />
+          <InputField label="Password" placeholder="Enter Your Password" />
+       </div>
+
+
       </div>
       <div className="flex flex-col items-center justify-center bg-[#073D44] text-white p-12 h-screen relative overflow-hidden gap-12">
         <div className="absolute top-40 -right-60 blur-[100px] w-250 h-40 bg-gradient-to-b from-[#37787E] via-white to-[#5BCAD4] -rotate-45 z-10 rounded-2xl"></div>

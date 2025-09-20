@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+
+@font-face {
+  font-family: productsans;
+  src: url("/fonts/product-sans/Product Sans Regular");
+}
+
+
+@font-face {
+  font-family: gilroy;
+  src: url("/fonts/gilroy/Gilroy-Regular.ttf");
+}

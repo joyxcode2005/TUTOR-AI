@@ -6,11 +6,11 @@ interface InputFieldProps {
 }
 
 
-const InputField = ({label, placeholder} : InputFieldProps) => {
+const InputField = ({ label, placeholder }: InputFieldProps) => {
   return (
-    <div>
+    <div className='flex flex-col w-[50%] gap-2'>
       <label htmlFor={label}>{label}</label>
-      <input id={label} placeholder={placeholder} className='border p-2 rounded-md' />
+      <input id={label} placeholder={placeholder} className=' p-2 rounded-xl bg-[#D9D9D9] text-[#9F9F9F] h-12 text-[0.85rem]' />
     </div>
   )
 }
