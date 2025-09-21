@@ -1,21 +1,23 @@
 import InputField from "@/components/InputField";
 import Image from "next/image";
 
+
+
 const page = () => {
   return (
     <div className="grid grid-cols-2">
       <div className="flex flex-col gap-5 justify-center items-start">
 
         <div className="flex items-center gap-3 absolute top-5 left-5">
-          <img src="/images/logo.png" alt="" className="w-[30%]"/>
-          <span className="font-bold text-[#073D44] text-3xl">Tutor.AI</span>
+          <img src="/images/logo.png" alt="" className="w-[30%]" />
+          <span className="font-bold text-[#073D44] text-2xl font-[productsans]">Tutor.AI</span>
         </div>
 
         <div className="w-full flex flex-col justify-center items-center gap-7 mt-16">
           <div className="w-full flex flex-col justify-center items-center mb-6">
-            <div className="w-[60%]">
-              <h1 className="font-medium text-3xl">Welcome Back!</h1>
-              <p className="text-[#8C8C8C]">Sign in to access your dashboard and continue optimizing your learning process.
+            <div className="w-[60%] flex flex-col gap-2">
+              <h1 className="font-medium text-3xl font-[productsans]">Welcome Back!</h1>
+              <p className="text-[#8C8C8C] font-[productsans]">Sign in to access your dashboard and continue optimizing your learning process.
               </p>
             </div>
           </div>
@@ -26,12 +28,12 @@ const page = () => {
             <div className="flex flex-col w-full items-center gap-1">
               <InputField label="Password" placeholder="Enter Your Password" />
               <div className="w-[60%] flex justify-end">
-                <span className="text-[0.75rem]">Don’t have an account? <a href="" className="font-bold text-[#03181a]">Create now</a></span>
+                <span className="text-[0.87rem] font-[productsans]">Don’t have an account? <a href="" className="font-bold text-[#03181a] ">Create now</a></span>
               </div>
             </div>
 
 
-            <input type="submit" className="bg-[#073D44] w-[60%] h-12 rounded-[15px] text-white flex justify-center items-center" value="Sign in" />
+            <input type="submit" className="bg-[#073D44] w-[60%] h-12 rounded-[15px] text-white flex justify-center items-center font-[productsans]" value="Sign in" />
 
 
           </form>
@@ -40,7 +42,7 @@ const page = () => {
             <div>
               <img src="/images/Line_2.png" alt="" className="w-50" />
             </div>
-            <span className="text-[#8C8C8C] font-medium">Or</span>
+            <span className="text-[#8C8C8C] font-medium font-[productsans]">Or</span>
             <div>
               <img src="/images/Line_1.png" alt="" className="w-50" /></div>
           </div>
@@ -61,10 +63,10 @@ const page = () => {
       <div className="flex flex-col items-center justify-center bg-[#073339] text-white p-12 h-screen relative overflow-hidden gap-12">
         <div className="absolute top-40 -right-60 blur-[100px] w-250 h-40 bg-gradient-to-b from-[#37787E] via-[#94dde3] to-[#5BCAD4] -rotate-45 z-10 rounded-2xl"></div>
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-4xl">
+          <h2 className="text-4xl font-[productsans] bg-clip-text bg-gradient-to-r from-white to-[#20ADBA] text-transparent">
             Revolutionize Education With Smarter Automation
           </h2>
-          <p className="text-lg mt-4 font-light">
+          <p className="text-lg mt-4 font-[gilroy] ">
             Smarter automation isn’t just the future of education, it’s the
             present – transforming classrooms into intelligent spaces for
             growth.
@@ -85,7 +87,7 @@ const page = () => {
             height={20}
             className=""
           />
-          <p className="ml-5 text-2xl">
+          <p className="ml-5 text-2xl font-[gilroy] ">
             Education is not the learning of facts, but the training of the mind
             to think.
           </p>
