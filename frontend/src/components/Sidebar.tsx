@@ -14,22 +14,29 @@ import {
   LogOut,
 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function Sidebar() {
   const [active, setActive] = useState("Roadmap");
+  const router = useRouter();
 
   const menuItems = [
-    { name: "Roadmap", icon: <LayoutGrid size={18} /> },
-    { name: "Youtube AI", icon: <Youtube size={18} /> },
-    { name: "Take Test", icon: <ClipboardCheck size={18} /> },
-    { name: "Evaluate", icon: <FileText size={18} /> },
-    { name: "Chat", icon: <MessageSquare size={18} /> },
+    { name: "Roadmap", icon: <LayoutGrid size={18} /> , href: "/roadmap"  },
+    { name: "Youtube AI", icon: <Youtube size={18} /> , href: "/ytai" },
+    { name: "Take Test", icon: <ClipboardCheck size={18} /> , href: "/test" },
+    { name: "Evaluate", icon: <FileText size={18} /> , href: "/evaluate" },
+    { name: "Chat", icon: <MessageSquare size={18} /> , href: "/chat" },
   ];
 
   const generalItems = [
     { name: "Settings", icon: <Settings size={18} /> },
     { name: "Help", icon: <HelpCircle size={18} /> },
   ];
+
+  const handleItemClick = (name: string, href: string) => {
+    setActive(name);
+    router.push(href);
+  }
 
   return (
     <div className="p-4">
@@ -55,7 +62,7 @@ function Sidebar() {
             {menuItems.map((item) => (
               <li key={item.name} className="relative">
                 <button
-                  onClick={() => setActive(item.name)}
+                  onClick={() => handleItemClick(item.name, item.href)}
                   className={`flex items-center gap-3 w-full px-4 py-2 font-[gilroy] text-sm font-medium relative z-10 cursor-pointer
                   ${
                     active === item.name
