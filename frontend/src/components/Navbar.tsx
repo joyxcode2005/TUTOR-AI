@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { pageTitleMap } from "@/constants/constant";
+import { SearchBox } from "@/components/SearchBox";
 
 function AnimatedTitle({ pageName }: { pageName: string }) {
   return (
@@ -27,6 +28,13 @@ function Navbar() {
   const pathname = usePathname();
   const pageName = pathname.split("/").filter(Boolean).pop();
 
+ if(pageName === "ytai"){
+    document.querySelector("#SearchBox")?.classList.remove("hidden");
+ }
+
+ else{
+   document.querySelector("#SearchBox")?.classList.add("hidden");
+ }
   
 
   return (
@@ -41,6 +49,10 @@ function Navbar() {
         />
 
         <AnimatedTitle pageName={pageName || "Dashboard"} />
+      </div>
+
+      <div className="w-full flex justify-center"  id="SearchBox">
+      <SearchBox />
       </div>
 
       <div className="flex items-center gap-4">
