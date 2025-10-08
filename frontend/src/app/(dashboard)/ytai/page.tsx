@@ -1,10 +1,8 @@
 import React from "react";
 import { Youtube, Eye, ThumbsUp, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
-
-const page = () => {
-
-
+const YtAI = () => {
   const courses = [
     {
       title: "Linear Algebra",
@@ -93,20 +91,21 @@ const page = () => {
     },
   ];
 
-
   return (
-    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-3">
       {courses.map((course, i) => (
         <div
           key={i}
-          className="bg-[#F3F3F3] rounded-xl shadow p-4 flex flex-col items-start"
+          className="bg-[#F3F3F3] rounded-xl w-75 shadow p-4 flex flex-col items-start"
         >
           {/* Thumbnail */}
           <div className="relative w-full">
-            <img
+            <Image
               src={course.thumbnail}
               alt={course.title}
               className="rounded-2xl w-full h-32 object-cover"
+              height={128}
+              width={320}
             />
             <span className="absolute bottom-2 right-2 bg-gradient-to-r from-[#0a5761] to-[#1193a49f] text-white text-xs px-2 py-1 rounded-full w-[30%] h-[20%] flex justify-center items-center font-[gilroy] font">
               <i>{course.duration}</i>
@@ -114,23 +113,34 @@ const page = () => {
           </div>
 
           {/* Title & provider */}
-          <h3 className="mt-3 font-extrabold text-2xl font-[gilroy] ">{course.title}</h3>
-          <p className="text-sm text-[#195D70] font-[gilroy]">{course.provider}</p>
+          <h3 className="mt-3 font-extrabold text-2xl font-[gilroy] ">
+            {course.title}
+          </h3>
+          <p className="text-sm font-bold text-[#195D70] font-[gilroy]">
+            {course.provider}
+          </p>
 
           {/* Stats */}
-          <div className="mt-3 space-y-1 text-sm text-[#757575]">
-            <p className="flex items-center gap-2 font-[gilroy]">
-              <Youtube className="w-4 h-4 text-black " /> {course.subscribers} Subscribers
-            </p>
-            <p className="flex items-center gap-2 font-[gilroy]">
-              <Eye className="w-4 h-4  text-black" /> {course.views} views
-            </p>
-            <p className="flex items-center gap-2 font-[gilroy]">
-              <ThumbsUp className="w-4 h-4  text-black" /> {course.likes} likes
-            </p>
-            <p className="flex items-center gap-2 font-[gilroy]">
-              <MessageCircle className="w-4 h-4  text-black" /> {course.comments} comments
-            </p>
+          <div className="mt-3 space-y-1 text-sm text-[#757575] flex justify-between w-full">
+            <div className="flex flex-col">
+              <p className="flex items-center gap-2 font-[gilroy] ">
+                <Youtube className="w-4 h-4 text-black " /> {course.subscribers}{" "}
+                Subscribers
+              </p>
+              <p className="flex items-center gap-2 font-[gilroy]">
+                <Eye className="w-4 h-4  text-black" /> {course.views} views
+              </p>
+            </div>
+            <div>
+              <p className="flex items-center gap-2 font-[gilroy]">
+                <ThumbsUp className="w-4 h-4  text-black" /> {course.likes}{" "}
+                likes
+              </p>
+              <p className="flex items-center gap-1 font-[gilroy]">
+                <MessageCircle className="w-4 h-4  text-black" />{" "}
+                {course.comments} comments
+              </p>
+            </div>
           </div>
 
           {/* Buttons */}
@@ -146,8 +156,6 @@ const page = () => {
       ))}
     </div>
   );
-}
+};
 
-
-
-export default page;
+export default YtAI;
